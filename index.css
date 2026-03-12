@@ -177,3 +177,87 @@ footer{
     border-top:2px solid #2c3e66;
 
 }
+
+/* ===== TABLET ===== */
+@media (max-width:1024px){
+
+section{
+padding:35px 25px;
+}
+
+.contenedor{
+gap:25px;
+}
+
+.tarjeta{
+width:210px;
+}
+
+.tarjeta img{
+height:150px;
+}
+
+}
+
+
+@media (max-width:768px){
+
+section{
+padding:25px 15px;
+}
+
+.contenedor{
+gap:15px;
+justify-content:center;
+}
+
+.tarjeta{
+width:45%;
+padding:12px;
+}
+
+.tarjeta img{
+height:130px;
+object-fit:contain;
+}
+
+h1{
+font-size:24px;
+}
+
+h2{
+font-size:20px;
+margin-bottom:15px;
+}
+
+}
+
+
+@media (max-width:480px){
+
+section{
+padding:20px 10px;
+}
+
+.contenedor{
+gap:12px;
+}
+
+.tarjeta{
+width:95%;
+padding:12px;
+}
+
+.tarjeta img{
+height:150px;
+}
+
+h1{
+font-size:21px;
+}
+
+h2{
+font-size:18px;
+}
+
+}
