@@ -2,23 +2,51 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de los jefes de Hollow Knight</title>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
 
+<div class="menu-container">
+    <div class="boton-menu" id="menuBtn" onclick="toggleSidebar()">
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+    </div>
+
+    <nav class="sidebar-panel" id="sidebarPanel">
+        <h3>Menú de Guía</h3>
+        <button onclick="filtrarFavoritos()">❤ Mis Favoritos</button>
+        <button onclick="mostrarEstadisticas()">☠ Progreso</button>
+        <button onclick="reiniciarDatos()">🔄 Reiniciar Datos</button>
+    </nav>
+</div>
+
 <header>
     <h1>Guía Completa para Hollow Knight</h1>
+    
+    <div class="buscador-wrapper">
+        <input type="text" id="buscador" placeholder="Busca un insecto o jefe...">
+    </div>
 </header>
 
+<main>
+    </main>
+
+</body>
+</html>
+
 <section>
+<section class="seccion-amigables">
     <h2>Personajes amigables</h2>
     <div class="contenedor">
 
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Myla.webp">
                     <h3>Myla</h3>
                 </div>
@@ -32,6 +60,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/ultimociervo.webp">
                     <h3>Ciervo Camino</h3>
                 </div>
@@ -45,6 +74,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/viejo_insecto.webp">
                     <h3>Viejo Insecto</h3>
                 </div>
@@ -58,6 +88,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/jiji.webp">
                     <h3>Jiji</h3>
                 </div>
@@ -71,6 +102,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Iselda.webp">
                     <h3>Iselda</h3>
                 </div>
@@ -84,6 +116,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Cornifer.webp">
                     <h3>Cornifer</h3>
                 </div>
@@ -97,6 +130,7 @@
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Quirrel2.webp">
                     <h3>Quirrel</h3>
                 </div>
@@ -113,6 +147,7 @@ Al final, recupera su propósito y encuentra paz.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/larvas.webp">
                     <h3>Larvas</h3>
                 </div>
@@ -129,6 +164,7 @@ Son clave para obtener recompensas útiles</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/padre_larva.webp">
                     <h3>Padre Larva</h3>
                 </div>
@@ -145,6 +181,7 @@ Su alegría crece conforme su familia vuelve a reunirse.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/White-Lady.webp">
                     <h3>Dama Blanca</h3>
                 </div>
@@ -161,6 +198,7 @@ Está conectada al plan contra la infección.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/doliente_gris.webp">
                     <h3>Doliente Gris</h3>
                 </div>
@@ -177,6 +215,7 @@ Busca honrar la memoria de su ser querido..</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/comepiernas.webp">
                     <h3>Comepiernas</h3>
                 </div>
@@ -193,6 +232,7 @@ Parece tener intenciones poco confiables.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Salubra.webp">
                     <h3>Salubra</h3>
                 </div>
@@ -209,6 +249,7 @@ Su actitud es alegre y un poco peculiar.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Cloth.webp">
                     <h3>Cloth</h3>
                 </div>
@@ -225,6 +266,7 @@ Desea encontrar un final digno en batalla.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Tiso.webp">
                     <h3>Tiso</h3>
                 </div>
@@ -241,6 +283,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Unn.webp">
                     <h3>Unn</h3>
                 </div>
@@ -254,6 +297,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/cazador.webp">
                     <h3>Cazador</h3>
                 </div>
@@ -267,6 +311,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/ZoteRender.webp">
                     <h3>Zote</h3>
                 </div>
@@ -280,6 +325,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/forjaagijones.webp">
                     <h3>Forja Aguijones</h3>
                 </div>
@@ -293,6 +339,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Sly.webp">
                     <h3>Sly</h3>
                 </div>
@@ -306,6 +353,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Tuk.webp">
                     <h3>Tuk</h3>
                 </div>
@@ -319,6 +367,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/vidente.webp">
                     <h3>Vidente</h3>
                 </div>
@@ -332,6 +381,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Brumm.webp">
                     <h3>Brumm</h3>
                 </div>
@@ -345,6 +395,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/buscador_reliquias.webp">
                     <h3>Lemm</h3>
                 </div>
@@ -358,6 +409,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="imagenes/Bretta.webp">
                     <h3>Bretta</h3>
                 </div>
@@ -370,14 +422,18 @@ Su destino revela la diferencia entre orgullo y valor.</p>
 
     </div>
 </section>
+</section>
 
 <section>
+    <seccion class="seccion-jefes">
     <h2>Jefes Principales</h2>
     <div class="contenedor">
 
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
+                    <div class="vencido-btn" onclick="toggleVencido(event, this)">☠</div>
                     <img src="jefesprincipales/vasija pura.webp">
                     <h3>Vasija Pura</h3>
                 </div>
@@ -391,6 +447,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Radiance.webp">
                     <h3>Radiance</h3>
                 </div>
@@ -404,6 +461,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/Grimm_Bow.webp">
                     <h3>Grimm</h3>
                 </div>
@@ -417,6 +475,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/falso_caballero.webp">
                     <h3>Falso Caballero</h3>
                 </div>
@@ -430,6 +489,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Soulmaster.webp">
                     <h3>maestro del alma</h3>
                 </div>
@@ -443,6 +503,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/lord_mantis.webp">
                     <h3>señores mantis</h3>
                 </div>
@@ -456,6 +517,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Crystal_Guardian.webp">
                     <h3>Cristal Guardián</h3>
                 </div>
@@ -469,6 +531,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/defensor_estiercol.webp">
                     <h3>Defensor Estiercol</h3>
                 </div>
@@ -483,6 +546,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Hornet.webp">
                     <h3>hornet</h3>
                 </div>
@@ -496,6 +560,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Hollow_Knight.webp">
                     <h3>Hollow Knight</h3>
                 </div>
@@ -509,6 +574,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Battle_Obble.webp">
                     <h3>Battle Obble</h3>
                 </div>
@@ -523,6 +589,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Elder_Baldur.webp">
                     <h3>Elder Baldur</h3>
                 </div>
@@ -538,6 +605,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Mawlek1.webp">
                     <h3>Mawlek</h3>
                 </div>
@@ -551,6 +619,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Pirmal_Aspid.webp">
                     <h3>Pirmal Aspid</h3>
                 </div>
@@ -566,6 +635,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Traitor_Lord.webp">
                     <h3>señor desleal</h3>
                 </div>
@@ -579,6 +649,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/B_Uumuu.webp">
                     <h3>uumuu</h3>
                 </div>
@@ -592,6 +663,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/domador_dioses.webp">
                     <h3>domador de dioses</h3>
                 </div>
@@ -606,6 +678,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/familiar_perdido.webp">
                     <h3>receptaculo roto</h3>
                 </div>
@@ -619,6 +692,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/fungiogro.webp">
                     <h3>Fungiogro</h3>
                 </div>
@@ -633,6 +707,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/guardianes vigias.webp">
                     <h3>guardianes vigias</h3>
                 </div>
@@ -646,6 +721,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/Hive_knight.webp">
                     <h3>caballero colmena</h3>
                 </div>
@@ -659,6 +735,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/oroymato.webp">
                     <h3>oro y mato</h3>
                 </div>
@@ -672,6 +749,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesprincipales/sheo.webp">
                     <h3>sheo</h3>
                 </div>
@@ -685,14 +763,17 @@ Su destino revela la diferencia entre orgullo y valor.</p>
 
     </div>
 </section>
+</section>
 
 <section>
+    <seccion class="seccion-secundarios">
     <h2>Jefes Secundarios</h2>
     <div class="contenedor">
     
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/The_Collector_Idle.webp">
                     <h3>el coleccionista</h3>
                 </div>
@@ -706,6 +787,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/B_Shade.webp">
                     <h3>sombra</h3>
                 </div>
@@ -719,6 +801,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/termarmita.webp">
                     <h3>termarmita</h3>
                 </div>
@@ -732,6 +815,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
     <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/B_Hive_Guardian.webp">
                     <h3>guardian colmena</h3>
                 </div>
@@ -745,6 +829,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/B_Hive_Soldier.webp">
                     <h3>soldado colmena</h3>
                 </div>
@@ -758,6 +843,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/B_Ooma.webp">
                     <h3>ooma</h3>
                 </div>
@@ -771,6 +857,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/funglobo.webp">
                     <h3>funglobo</h3>
                 </div>
@@ -784,6 +871,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/gran_saltamontes.webp">
                     <h3>gran saltamontes</h3>
                 </div>
@@ -797,6 +885,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/guerrero mantis.webp">
                     <h3>guerrero mantis</h3>
                 </div>
@@ -810,6 +899,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/guerrero_alma.webp">
                     <h3>guerrero alma</h3>
                 </div>
@@ -823,6 +913,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/insensato_alado.webp">
                     <h3>insensato alado</h3>
                 </div>
@@ -836,6 +927,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/insensato_escudado.webp">
                     <h3>insensato escudado</h3>
                 </div>
@@ -849,6 +941,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/insensato_fornido.webp">
                     <h3>insensato fornido</h3>
                 </div>
@@ -862,6 +955,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/insensato_pesado.webp">
                     <h3>insensato pesado</h3>
                 </div>
@@ -875,6 +969,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/mantis.webp">
                     <h3>guerrero mantis</h3>
                 </div>
@@ -888,6 +983,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/musgo_caballero.webp">
                     <h3>musgo caballero</h3>
                 </div>
@@ -901,6 +997,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/musgoagresor gigante.webp">
                     <h3>musgo agresor gigante</h3>
                 </div>
@@ -914,6 +1011,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/rey_vengamosca.webp">
                     <h3>rey vengamosca</h3>
                 </div>
@@ -927,6 +1025,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefessecundarios/sporg.png">
                     <h3>sporg</h3>
                 </div>
@@ -938,14 +1037,18 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         </div>
     </div>
 </section>
+</section>
+
 
 <section>
+    <seccion class="seccion-oniricos">
     <h2>Jefes Oníricos</h2>
     <div class="contenedor">
 
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/Absolute_Radiance_Statue.webp">
                     <h3>Absolute Radiance</h3>
                 </div>
@@ -959,6 +1062,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/campeon_fallido.webp">
                     <h3>Campeón Fallido</h3>
                 </div>
@@ -972,6 +1076,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/defensor_blanco.webp">
                     <h3>Defensor Blanco</h3>
                 </div>
@@ -985,6 +1090,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/familiarperdido.webp">
                     <h3>Familiar Perdido</h3>
                 </div>
@@ -998,6 +1104,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/gran_sabio_sly.webp">
                     <h3>Gran Sabio Sly</h3>
                 </div>
@@ -1011,6 +1118,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/grimm_pesadilla.webp">
                     <h3>Grimm Pesadilla</h3>
                 </div>
@@ -1024,6 +1132,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/guardian_furioso.webp">
                     <h3>Guardián Furioso</h3>
                 </div>
@@ -1037,6 +1146,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Elder_Hu.webp">
                     <h3>anciano Hu</h3>
                 </div>
@@ -1050,6 +1160,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Galien.webp">
                     <h3>Galien</h3>
                 </div>
@@ -1063,6 +1174,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Gorb.webp">
                     <h3>Gorb</h3>
                 </div>
@@ -1076,6 +1188,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/sin ojos.webp">
                     <h3>Sin Ojos</h3>
                 </div>
@@ -1089,6 +1202,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Markoth.webp">
                     <h3>Markoth</h3>
                 </div>
@@ -1102,6 +1216,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Marmu.webp">
                     <h3>Marmu</h3>
                 </div>
@@ -1115,6 +1230,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/HJ_Xero.webp">
                     <h3>Xero</h3>
                 </div>
@@ -1128,6 +1244,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/Maestro_de_Almas.webp">
                     <h3>Maestro de Almas</h3>
                 </div>
@@ -1141,6 +1258,7 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         <div class="tarjeta" onclick="this.classList.toggle('girada')">
             <div class="tarjeta-inner">
                 <div class="tarjeta-front">
+                    <div class="fav-btn" onclick="toggleFav(event, this)">♡</div>
                     <img src="jefesoniricos/principe gris zote.webp">
                     <h3>Príncipe Gris Zote</h3>
                 </div>
@@ -1151,14 +1269,10 @@ Su destino revela la diferencia entre orgullo y valor.</p>
             </div>
         </div>
 
-
-
-
-
-
-
     </div>
 </section>
+</section>
+
 
 <footer>
     Proyecto Final - Jose Cabrera © 2026
