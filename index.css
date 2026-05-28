@@ -34,7 +34,7 @@ h2 {
 /* ESTRUCTURA 3D DE LA TARJETA */
 .tarjeta {
     width: 230px;
-    height: 320px;
+    height: 330px;
     perspective: 1000px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -75,20 +75,21 @@ h2 {
 /* CARA FRONTAL */
 .tarjeta-front {
     background-color: #1c2335;
-    box-shadow: 0 0 15px rgba(200,220,255,0.2);
+    box-shadow: 0 0 10px rgba(200,220,255,0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 12px;
 }
 
 /* Lo que comparten todas las imágenes  */
 .tarjeta-front img {
     width: 100%;
-    height: 160px;
+    height: 155px;
     object-fit: contain;
-    filter: drop-shadow(0px 10px 15px #000);
-    margin-bottom: 25px;
-    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: drop-shadow(0px 7px 10px #000);
+    margin-bottom: 18px;
+    transition: transform 0.4s ease, filter 0.4s ease;
     z-index: 2;
     position: relative; 
 }
@@ -124,32 +125,41 @@ h2 {
 
 .tarjeta h3 {
     margin: 0;
+    padding: 0 8px;
     color: #e6f0ff;
-    text-shadow: 0 0 6px rgba(14, 227, 138, 0.3);
+    font-size: 1rem;
+    line-height: 1.2;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
-
 /* CARA TRASERA */
 .tarjeta-back {
     background-color: #2c3e66;
     color: #f8f6f6;
     transform: rotateY(180deg);
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    box-shadow: inset 0 0 20px rgba(251, 147, 1, 0.5);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.45);
+    overflow-y: auto;
 }
 
 .tarjeta-back h3 {
     border-bottom: 1px solid #9fbfff;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    margin: 4px 0 10px 0;
+    padding-bottom: 6px;
+    font-size: 1rem;
+    line-height: 1.2;
+    width: 100%;
+    text-align: center;
 }
 
 .tarjeta-back p {
-    font-size: 0.95rem;
-    line-height: 1.4;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    text-align: justify;
+    margin: 0;
 }
 
 footer {
@@ -291,33 +301,32 @@ footer {
 /* CONTENEDOR DEL MENÚ */
 .menu-container {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 18px;
+    left: 18px;
     z-index: 1000;
 }
-
 /* BOTÓN menu */
 .boton-menu {
-    width: 55px;
-    height: 55px;
-    background-color: #2a2a2a; /* Gris oscuro de la imagen */
-    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    background-color: #1c2335; /* Gris oscuro de la imagen */
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    border: 1px solid #4a5568;
 }
 
 .boton-menu:hover {
-    background-color: #3a3a3a;
-    transform: scale(1.05);
+    background-color: #2c3e66;
+    transform: scale(1.03);
 }
 
 .linea {
-    width: 22px;
+    width: 23px;
     height: 3px;
     background-color: white;
     margin: 2.5px 0;
@@ -338,46 +347,203 @@ footer {
 /* PANEL LATERAL */
 .sidebar-panel {
     position: absolute;
-    top: 65px;
+    top: 62px;
     left: -260px; /* Escondido */
     width: 220px;
-    background: rgba(17, 24, 39, 0.98);
-    padding: 20px;
+    background: #111827;
+    padding: 18px;
     border-radius: 12px;
     border: 1px solid #2c3e66;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+    transition: 0.4s;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .sidebar-panel.visible {
     left: 0; /* Aparece suavemente */
 }
 
+
 .sidebar-panel h3 {
     color: #7ea9ff;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
     border-bottom: 1px solid #2c3e66;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
+    text-align: center;
 }
 
 .sidebar-panel button {
     background: #1c2335;
     color: white;
     border: 1px solid #4a5568;
-    padding: 12px;
+    padding: 11px 12px;
     border-radius: 8px;
     cursor: pointer;
     text-align: left;
-    transition: 0.3s;
+    transition: 0.25s;
+    font-size: 0.95rem;
 }
 
 .sidebar-panel button:hover {
-    background: #2d3748;
-    border-color: #0630ff;
-    color: #00d0ff;
+    background: #2c3e66;
+    border-color: #7ea9ff;
+    color: #ffee06;
 }
 /*<audio id="audio" src="audios/ytmp3free.cc_hollow-knight-ost-hollow-knight-youtubemp3free.org.mp3" autoplay loop></audio>*/
+
+
+/* Contenedor principal de la alerta */
+.popup-hk {
+    border: 1px solid #333 !important;
+    border-top: 3px solid #7ea9ff !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 30px rgba(0,0,0,0.9) !important;
+} 
+
+/* Títulos estilo HK */
+.tit-hk {
+    font-family: serif;
+    letter-spacing: 3px;
+    color: #dfdfdf;
+    font-size: 1.2rem;
+}
+
+.frase-hk {
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Barra de progreso minimalista */
+.barra-progreso-bg {
+    background: #222;
+    height: 8px;
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid #444;
+}
+
+.barra-progreso-fill {
+    background: linear-gradient(90deg, #fff 0%, #7ea9ff 100%);
+    height: 100%;
+    transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(126, 169, 255, 0.5);
+}
+
+.stats-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
+} 
+
+/* Botones personalizados */
+.btn-hk-confirm, .btn-hk-danger, .btn-hk-cancel {
+    padding: 10px 18px;
+    margin: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+.btn-hk-confirm {
+    border: 1px solid #7ea9ff;
+    color: #7ea9ff;
+}
+
+.btn-hk-confirm:hover {
+    background: #7ea9ff;
+    color: #000;
+}
+
+.btn-hk-danger {
+    border: 1px solid #ff4444;
+    color: #ff4444;
+}
+
+.btn-hk-danger:hover {
+    background: #ff4444;
+    color: #000;
+}
+
+.btn-hk-cancel {
+    border: 1px solid #888;
+    color: #888;
+}
+
+.btn-hk-cancel:hover {
+    background: #888;
+    color: #000;
+} 
+
+
+
+
+/* AJUSTE PARA QUE LA INTRO NO ESTORBE */
+.intro-proyecto {
+    padding: 25px 50px;
+    margin: 0;
+    background-color: #161d33;
+    border-bottom: 1px solid #2c3e66;
+}
+
+.intro-proyecto h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.intro-proyecto p {
+    max-width: 1100px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 8px 0;
+}
+
+/* PROGRESO MÁS COMPACTO */
+.resumen-progreso {
+    max-width: 500px;
+    margin-top: 18px;
+    padding: 15px;
+    background-color: #111827;
+    border: 1px solid #2c3e66;
+    border-radius: 10px;
+}
+
+.resumen-progreso h3 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+}
+
+#textoProgreso,
+#porcentajeProgreso {
+    font-size: 0.9rem;
+    margin: 6px 0;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 10px;
+    background-color: #0b1020;
+    border: 1px solid #2c3e66;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.barra-progreso-interna {
+    height: 100%;
+    width: 0%;
+    background-color: #7ea9ff;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+
+

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de los jefes de Hollow Knight</title>
+    <title>GhostNest</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -33,12 +34,34 @@
 </header>
 
 <main>
-    </main>
 
-</body>
-</html>
+<section class="intro-proyecto">
+    <h2>GhostNest</h2>
 
-<section>
+    <p>
+        GhostNest es una página web interactiva basada en el videojuego Hollow Knight.
+        Su objetivo es mostrar una guía visual de personajes amigables, jefes principales,
+        jefes secundarios y jefes oníricos.
+    </p>
+
+    <p>
+        La página permite buscar personajes, marcar favoritos y registrar los jefes
+        que el usuario ya derrotó. Además, incluye un sistema de progreso que calcula
+        el porcentaje de jefes vencidos.
+    </p>
+
+    <div class="resumen-progreso">
+        <h3>Progreso de jefes derrotados</h3>
+        <p id="textoProgreso">Jefes derrotados: 0 / 0</p>
+
+        <div class="barra-progreso">
+            <div id="barraProgreso" class="barra-progreso-interna"></div>
+        </div>
+
+        <p id="porcentajeProgreso">0% completado</p>
+    </div>
+</section>
+
 <section class="seccion-amigables">
     <h2>Personajes amigables</h2>
     <div class="contenedor">
@@ -422,10 +445,8 @@ Su destino revela la diferencia entre orgullo y valor.</p>
 
     </div>
 </section>
-</section>
 
-<section>
-    <seccion class="seccion-jefes">
+<section class="seccion-jefes">
     <h2>Jefes Principales</h2>
     <div class="contenedor">
 
@@ -785,10 +806,8 @@ Su destino revela la diferencia entre orgullo y valor.</p>
 
     </div>
 </section>
-</section>
 
-<section>
-    <seccion class="seccion-secundarios">
+<section class="seccion-secundarios">
     <h2>Jefes Secundarios</h2>
     <div class="contenedor">
     
@@ -1078,11 +1097,9 @@ Su destino revela la diferencia entre orgullo y valor.</p>
         </div>
     </div>
 </section>
-</section>
 
 
-<section>
-    <seccion class="seccion-oniricos">
+<section class="seccion-oniricos">
     <h2>Jefes Oníricos</h2>
     <div class="contenedor">
 
@@ -1328,8 +1345,9 @@ Su destino revela la diferencia entre orgullo y valor.</p>
 
     </div>
 </section>
-</section>
 
+
+</main>
 
 <footer>
     Proyecto Final - Jose Cabrera © 2026
